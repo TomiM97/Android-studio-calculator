@@ -23,38 +23,50 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void plusButton(View view) {
-        float sum = Float.parseFloat(String.valueOf(inputDecimal1.getText())) +
-                Float.parseFloat(String.valueOf(inputDecimal2.getText()));
-
-        StringBuilder sb = new StringBuilder(String.valueOf(sum));
-
-        outputDecimal.setText(sb);
+        try {
+            float sum = Float.parseFloat(String.valueOf(inputDecimal1.getText())) +
+                    Float.parseFloat(String.valueOf(inputDecimal2.getText()));
+            StringBuilder sb = new StringBuilder(String.valueOf(sum));
+            outputDecimal.setText(sb);
+        } catch (Exception e) {
+            outputDecimal.setText("Odottamaton virhe");
+        }
     }
 
     public void minusButton(View view) {
-        float sum = Float.parseFloat(String.valueOf(inputDecimal1.getText())) -
-                Float.parseFloat(String.valueOf(inputDecimal2.getText()));
-
-        StringBuilder sb = new StringBuilder(String.valueOf(sum));
-
-        outputDecimal.setText(sb);
+        try {
+            float sum = Float.parseFloat(String.valueOf(inputDecimal1.getText())) -
+                    Float.parseFloat(String.valueOf(inputDecimal2.getText()));
+            StringBuilder sb = new StringBuilder(String.valueOf(sum));
+            outputDecimal.setText(sb);
+        } catch (Exception e) {
+            outputDecimal.setText("Odottamaton virhe");
+        }
     }
 
     public void multiplyButton(View view) {
-        float sum = Float.parseFloat(String.valueOf(inputDecimal1.getText())) *
-                Float.parseFloat(String.valueOf(inputDecimal2.getText()));
-
-        StringBuilder sb = new StringBuilder(String.valueOf(sum));
-
-        outputDecimal.setText(sb);
+            try {
+                float sum = Float.parseFloat(String.valueOf(inputDecimal1.getText())) *
+                        Float.parseFloat(String.valueOf(inputDecimal2.getText()));
+                StringBuilder sb = new StringBuilder(String.valueOf(sum));
+                outputDecimal.setText(sb);
+            } catch (Exception e) {
+                outputDecimal.setText("Odottamaton virhe");
+            }
     }
 
     public void divideButton(View view) {
-        float sum = Float.parseFloat(String.valueOf(inputDecimal1.getText())) /
-                Float.parseFloat(String.valueOf(inputDecimal2.getText()));
-
-        StringBuilder sb = new StringBuilder(String.valueOf(sum));
-
-        outputDecimal.setText(sb);
+                try {
+                    if(Float.parseFloat(String.valueOf(inputDecimal2.getText()))==0) {
+                        outputDecimal.setText("Nollalla jako");
+                    } else {
+                        float sum = Float.parseFloat(String.valueOf(inputDecimal1.getText())) /
+                                Float.parseFloat(String.valueOf(inputDecimal2.getText()));
+                        StringBuilder sb = new StringBuilder(String.valueOf(sum));
+                        outputDecimal.setText(sb);
+                    }
+                } catch (Exception e) {
+                    outputDecimal.setText("Odottamaton virhe");
+                }
     }
 }
