@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             StringBuilder sb = new StringBuilder(String.valueOf(sum));
             outputDecimal.setText(sb);
         } catch (Exception e) {
-            outputDecimal.setText("Odottamaton virhe");
+            outputDecimal.setText("Unexpected error");
         }
     }
 
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             StringBuilder sb = new StringBuilder(String.valueOf(sum));
             outputDecimal.setText(sb);
         } catch (Exception e) {
-            outputDecimal.setText("Odottamaton virhe");
+            outputDecimal.setText("Unexpected error");
         }
     }
 
@@ -51,14 +51,14 @@ public class MainActivity extends AppCompatActivity {
                 StringBuilder sb = new StringBuilder(String.valueOf(sum));
                 outputDecimal.setText(sb);
             } catch (Exception e) {
-                outputDecimal.setText("Odottamaton virhe");
+                outputDecimal.setText("Unexpected error");
             }
     }
 
     public void divideButton(View view) {
                 try {
                     if(Float.parseFloat(String.valueOf(inputDecimal2.getText()))==0) {
-                        outputDecimal.setText("Nollalla jako");
+                        outputDecimal.setText("Division by zero");
                     } else {
                         float sum = Float.parseFloat(String.valueOf(inputDecimal1.getText())) /
                                 Float.parseFloat(String.valueOf(inputDecimal2.getText()));
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                         outputDecimal.setText(sb);
                     }
                 } catch (Exception e) {
-                    outputDecimal.setText("Odottamaton virhe");
+                    outputDecimal.setText("Unexpected error");
                 }
     }
 }
